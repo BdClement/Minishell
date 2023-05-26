@@ -20,7 +20,7 @@ LIBFTDIR = 		./Libft
 
 LIBFT =			$(LIBFTDIR)/libft.a
 
-LIBFT_FLAGS = 	-L$(LIBFTDIR) -lft
+LIBFT_FLAGS = 	-L$(LIBFTDIR) -lft -lreadline
 
 ## OBJECTS
 
@@ -67,4 +67,4 @@ re:				fclean all
 .PHONY: 		all clean fclean re
 
 
-# @ a la fin 
+# @ a la fin

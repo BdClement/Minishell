@@ -6,7 +6,7 @@
 /*   By: clbernar <clbernar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 18:01:05 by clbernar          #+#    #+#             */
-/*   Updated: 2023/05/26 18:03:51 by clbernar         ###   ########.fr       */
+/*   Updated: 2023/05/26 20:05:35 by clbernar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 # include "../Libft/Includes/libft.h"
 # include "../Libft/Includes/ft_printf.h"
 # include "../Libft/Includes/get_next_line.h"
+
+// #include <stdio.h>
+// #include <readline/readline.h>
+// #include <readline/history.h>
 
 typedef enum s_token_type {
 	T_WORD,
