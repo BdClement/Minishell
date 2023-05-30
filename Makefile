@@ -14,13 +14,15 @@ RM_RF =			rm -rf
 
 SRC_DIR = 		./src
 
-SRCS = 			$(SRC_DIR)/main.c \
+SRCS = 			$(SRC_DIR)/main.c $(SRC_DIR)/lexer.c
 
 LIBFTDIR = 		./Libft
 
 LIBFT =			$(LIBFTDIR)/libft.a
 
-LIBFT_FLAGS = 	-L$(LIBFTDIR) -lft -lreadline
+LIBFT_FLAGS = 	-L$(LIBFTDIR) -lft
+
+LREADLINE_FLAGS = -lreadline
 
 ## OBJECTS
 
@@ -44,7 +46,7 @@ INC_HD =		-I $(HDIR) -I $(LIBFTDIR)/Include
 all:			$(NAME)
 
 $(NAME):		$(LIBFT) $(OBJS)
-				$(CC) $(CFLAGS) $(INC_HD) $(OBJS) $(LIBFT_FLAGS) -o $@
+				$(CC) $(CFLAGS) $(INC_HD) $(OBJS) $(LIBFT_FLAGS) $(LREADLINE_FLAGS) -o $@
 
 $(OBJS):		$(OBJ_DIR)/%.o:	$(SRC_DIR)/%.c $(HD)
 				mkdir -p $(OBJ_DIR)
