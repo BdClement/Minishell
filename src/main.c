@@ -6,7 +6,7 @@
 /*   By: clbernar <clbernar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 18:05:32 by clbernar          #+#    #+#             */
-/*   Updated: 2023/05/30 18:44:05 by clbernar         ###   ########.fr       */
+/*   Updated: 2023/05/31 13:43:30 by clbernar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,28 +22,23 @@ void	minishell(void)
 
 
 	lst = NULL;
-	// while(1)
-	// {
+	while(1)
+	{
 		prompt = "Minishell$ ";
 		input = readline(prompt);
-		lexer(&lst, input);
-		tmp = lst;
-		while (tmp != NULL)
+		if (check_syntax(input) == 1)
 		{
-			ft_printf("Type : %d Value : %s\n\n", tmp->type, tmp->value);
-			// if (tmp->prev != NULL)
-			// {
-			// 	prev = tmp->prev;
-			// 	printf("previous == %s\n", prev->value);
-			// }
-			tmp = tmp->next;
+			lexer(&lst, input);
+			tmp = lst;
+			while (tmp != NULL)
+			{
+				ft_printf("Type : %d Value : %s\n\n", tmp->type, tmp->value);
+				tmp = tmp->next;
+			}
+			free_list(&lst);
+			free(input);
 		}
-		// tmp = tmp->prev;
-		// ft_printf("%s\n", tmp->value);
-		free_list(&lst);
-		// Free lst !!
-		free(input);
-	// }
+	}
 	return ;
 }
 

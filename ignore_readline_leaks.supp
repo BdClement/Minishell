@@ -1,0 +1,24 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    ignore_readline_leaks.supp                         :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: clbernar <clbernar@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/05/30 15:30:44 by clbernar          #+#    #+#              #
+#    Updated: 2023/05/30 15:36:10 by clbernar         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+{
+	ignore_readline_leaks
+	Memcheck:Leak
+	...
+	fun:readline
+}
+{
+	ignore_readline_leaks
+	Memcheck:Leak
+	...
+	fun:add_history
+}

@@ -6,7 +6,7 @@
 /*   By: clbernar <clbernar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 18:01:05 by clbernar          #+#    #+#             */
-/*   Updated: 2023/05/30 18:53:14 by clbernar         ###   ########.fr       */
+/*   Updated: 2023/05/31 13:42:18 by clbernar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,17 @@ typedef struct s_token {
 }				t_token;
 
 // LEXER PART
-// LIST
+//		LEXER_LIST
 void			free_list(t_token **lst);
 void			add_to_list(t_token **lst, t_token *new);
 t_token			*create_token(t_token_type type, char *token_value);
-// t_token	*lst_last(t_token **lst);
-// TOKENISATION
+//	t_token	*lst_last(t_token **lst);
+// TOKENISATION LEXER
 char			*get_token_value(char *input, char delimiter);
 void			lexer(t_token **lst, char *input);
 t_token_type	get_token_type(char *token_value);
+//
+int				check_syntax(char *input);
+int				check_redirection(char *input);
 
 #endif
