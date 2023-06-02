@@ -6,7 +6,7 @@
 /*   By: clbernar <clbernar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 18:01:05 by clbernar          #+#    #+#             */
-/*   Updated: 2023/05/31 13:42:18 by clbernar         ###   ########.fr       */
+/*   Updated: 2023/06/02 16:50:25 by clbernar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@
 #include <readline/history.h>
 
 # define DELIMITER ' '
+# define SPECIAL_CHAR "#&~/.*`();\\"
+# define SINGLE_OPEN 1
+# define DOUBLE_OPEN 2
+# define CLOSED 3
 
 typedef enum s_token_type {
 	T_WORD,
@@ -37,7 +41,7 @@ typedef struct s_token {
 	t_token_type	type;
 	char			*value;
 	struct s_token	*next;
-	struct s_token	*prev;
+	// struct s_token	*prev;
 }				t_token;
 
 // LEXER PART
@@ -50,8 +54,15 @@ t_token			*create_token(t_token_type type, char *token_value);
 char			*get_token_value(char *input, char delimiter);
 void			lexer(t_token **lst, char *input);
 t_token_type	get_token_type(char *token_value);
-//
+
+// SYNTAX_ERROR
 int				check_syntax(char *input);
+int				check_pipe_error(char *input);
 int				check_redirection(char *input);
+int				check_special_char(char *input);
+
+// UTILS
+int				is_special_char(char c);
+int				quotes_state(char c, int prev_state);
 
 #endif

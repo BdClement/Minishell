@@ -6,27 +6,13 @@
 /*   By: clbernar <clbernar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 12:06:53 by clbernar          #+#    #+#             */
-/*   Updated: 2023/05/31 12:49:03 by clbernar         ###   ########.fr       */
+/*   Updated: 2023/06/02 12:00:13 by clbernar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Include/minishell.h"
 
 // valgrind --suppressions=ignore_readline_leaks.supp --leak-check=full --show-leak-kinds=all
-
-// // Cette fonction indique si le caractere donne est un delimiteur
-// int	is_delimiter(char c, char *delimiter)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (delimiter[i] != '\0')
-// 	{
-// 		if (c == delimiter[i++])
-// 			return (1)
-// 	}
-// 	return (0);
-// }
 
 // Cette fonction fait office de split en conservant l'input
 // Et en separant chaque partie separe par des espaces

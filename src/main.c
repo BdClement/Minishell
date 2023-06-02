@@ -6,35 +6,41 @@
 /*   By: clbernar <clbernar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 18:05:32 by clbernar          #+#    #+#             */
-/*   Updated: 2023/05/31 13:43:30 by clbernar         ###   ########.fr       */
+/*   Updated: 2023/06/02 16:11:25 by clbernar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Include/minishell.h"
 
+// Pour les Tests
+void	display_list(t_token **lst)
+{
+	t_token	*tmp;
+
+	tmp = *lst;
+	while (tmp != NULL)
+	{
+		ft_printf("Type: %d ; Value: %s\n", tmp->type,
+			tmp->value);
+		tmp = tmp->next;
+	}
+}
+
 void	minishell(void)
 {
 	char		*input;
-	const char	*prompt;
 	t_token		*lst;
-	t_token		*tmp;
-	// t_token		*prev;
+	// t_token		*prev; A voir si besoin
 
 
 	lst = NULL;
 	while(1)
 	{
-		prompt = "Minishell$ ";
-		input = readline(prompt);
+		input = readline("Minishell$ ");
 		if (check_syntax(input) == 1)
 		{
 			lexer(&lst, input);
-			tmp = lst;
-			while (tmp != NULL)
-			{
-				ft_printf("Type : %d Value : %s\n\n", tmp->type, tmp->value);
-				tmp = tmp->next;
-			}
+			display_list(&lst);
 			free_list(&lst);
 			free(input);
 		}
