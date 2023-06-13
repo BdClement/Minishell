@@ -15,7 +15,7 @@ RM_RF =			rm -rf
 SRC_DIR = 		./src
 
 SRCS = 			$(SRC_DIR)/main.c $(SRC_DIR)/lexer.c $(SRC_DIR)/syntax_error.c\
-				$(SRC_DIR)/lexer_list.c $(SRC_DIR)/utils.c
+				$(SRC_DIR)/lexer_list.c $(SRC_DIR)/utils.c $(SRC_DIR)/syntax_error2.c\
 
 LIBFTDIR = 		./Libft
 
