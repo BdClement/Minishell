@@ -41,8 +41,8 @@ A here document is a method used in shell to define multi-line string. It has be
 ## 🔧 Build program  
 Download, clone repo and use Makefile
 ```bash
-git clone https://github.com/r4meau/minishell
-cd minishell
+git clone https://github.com/BdClement/Minishell.git
+cd Minishell
 make
 ```
 Run executable file ./minishell
