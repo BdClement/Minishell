@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_2.c                                          :+:      :+:    :+:   */
+/*   utils_main.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmirlico <bmirlico@student.42.fr>          +#+  +:+       +#+        */
+/*   By: clbernar <clbernar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 21:12:41 by bmirlico          #+#    #+#             */
-/*   Updated: 2023/08/07 21:17:30 by bmirlico         ###   ########.fr       */
+/*   Updated: 2025/01/14 15:34:39 by clbernar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,13 @@ void	display_parser(t_command **cmds)
 	tmp = *cmds;
 	while (tmp != NULL)
 	{
-		printf("\n---NODE no: %d----\n", j);
+		// printf("\n---NODE no: %d----\n", j);
 		i = 0;
 		if (tmp->cmd_args != NULL)
 		{
 			while (tmp->cmd_args[i] != NULL)
 			{
-				ft_printf("CMD_ARGS: %s\n", tmp->cmd_args[i]);
+				// ft_printf("CMD_ARGS: %s\n", tmp->cmd_args[i]);
 				i++;
 			}
 		}

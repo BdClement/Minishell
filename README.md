@@ -51,6 +51,3 @@ Run executable file ./minishell
 ## 💼 Contributors  
 - [Bastien Mirlicourtois](https://github.com/bmirlico)
 
-
-Check le projet rendu / la derniere version github
-Check si Build program fonctionne 
