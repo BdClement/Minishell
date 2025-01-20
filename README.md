@@ -35,7 +35,7 @@ We had to implement signals handling (ctrl-C, ctrl-D, ctrl-\). It has been done 
 Before processing to command execution we had to check if the command contains a redirection. If so, we redirect the command instead of the pipe.
 
 #### Heredoc  
-A here document is a method used in shell to define multi-line string. It has been handle by using a temporary file to store multi-line string. The difficulty here was handling signals and expand during heredoc management.
+A here document is a method used in shell to define multi-line string. It has been handle by using a temporary file to store multi-line string. The difficulty here was handling signals and expand during heredoc management.  
 
 
 ## 🔧 Build program  
